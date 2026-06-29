@@ -1,7 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+
+#ifndef _WIN32
+# include <sys/socket.h>
+#else
+# include <ws2tcpip.h>
+#endif
 
 #include "bs.h"
 #include "kv.h"
